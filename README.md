@@ -30,3 +30,17 @@ Run the Django dev server:
 ```
 
 Browse to http://localhost:8000/
+
+## Loading data
+
+Create a superuser:
+
+```
+./manage.py createsuperuser
+```
+
+Run the `import_versions` script:
+
+```
+python manage.py shell -c 'from apostolic_fathers_atlas.library.importers import import_versions; import_versions();'
+```
