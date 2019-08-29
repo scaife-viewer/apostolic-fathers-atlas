@@ -1,12 +1,138 @@
 {
   "versions": [
     {
-      "urn": "",
-      "content_path": "",
+      "urn": "urn:cts:greekLit:tlg1271.tlg001.1st1K-grc1",
+      "content_path": "001-i_clement.txt",
       "metadata": {
-        "work_title": "",
-        "work_urn": "",
-        "type": ""
+        "work_title": "1 Clement",
+        "work_urn": "urn:cts:greekLit:tlg1271.tlg001",
+        "type": "edition"
+      }
+    },
+    {
+      "urn": "rn:cts:greekLit:tlg1271.tlg002.1st1K-grc1",
+      "content_path": "002-ii_clement.txt",
+      "metadata": {
+        "work_title": "2 Clement",
+        "work_urn": "rn:cts:greekLit:tlg1271.tlg002",
+        "type": "edition"
+      }
+    },
+    {
+      "urn": "urn:cts:greekLit:tlg1443.tlg004.1st1K-grc1",
+      "content_path": "003-ignatius-ephesians.txt",
+      "metadata": {
+        "work_title": "Ignatius Ephesians",
+        "work_urn": "urn:cts:greekLit:tlg1443.tlg004",
+        "type": "edition"
+      }
+    },
+    {
+      "urn": "urn:cts:greekLit:tlg1443.tlg005.1st1K-grc1",
+      "content_path": "004-ignatius-magnesians.txt",
+      "metadata": {
+        "work_title": "Ignatius Magnesians",
+        "work_urn": "urn:cts:greekLit:tlg1443.tlg005",
+        "type": "edition"
+      }
+    },
+    {
+      "urn": "urn:cts:greekLit:tlg1443.tlg006.1st1K-grc1",
+      "content_path": "005-ignatius-trallians.txt",
+      "metadata": {
+        "work_title": "Ignatius Trallians",
+        "work_urn": "urn:cts:greekLit:tlg1443.tlg006",
+        "type": "edition"
+      }
+    },
+    {
+      "urn": "urn:cts:greekLit:tlg1443.tlg007.1st1K-grc1",
+      "content_path": "006-ignatius-romans.txt",
+      "metadata": {
+        "work_title": "Ignatius Romans",
+        "work_urn": "urn:cts:greekLit:tlg1443.tlg007",
+        "type": "edition"
+      }
+    },
+    {
+      "urn": "urn:cts:greekLit:tlg1443.tlg008.1st1K-grc1",
+      "content_path": "007-ignatius-philadelphians.txt",
+      "metadata": {
+        "work_title": "Ignatius Philadelphians",
+        "work_urn": "urn:cts:greekLit:tlg1443.tlg008",
+        "type": "edition"
+      }
+    },
+    {
+      "urn": "urn:cts:greekLit:tlg1443.tlg009.1st1K-grc1",
+      "content_path": "008-ignatius-smyrnaeans.txt",
+      "metadata": {
+        "work_title": "Ignatius Smyrnaeans",
+        "work_urn": "urn:cts:greekLit:tlg1443.tlg009",
+        "type": "edition"
+      }
+    },
+    {
+      "urn": "urn:cts:greekLit:tlg1443.tlg010.1st1K-grc1",
+      "content_path": "009-ignatius-polycarp.txt",
+      "metadata": {
+        "work_title": "Ignatius Polycarp",
+        "work_urn": "urn:cts:greekLit:tlg1443.tlg010",
+        "type": "edition"
+      }
+    },
+    {
+      "urn": "urn:cts:greekLit:tlg1622.tlg001.1st1K-grc1",
+      "content_path": "010-polycarp-philippians.txt",
+      "metadata": {
+        "work_title": "Polycarp Philippians",
+        "work_urn": "urn:cts:greekLit:tlg1622.tlg001",
+        "type": "edition"
+      }
+    },
+    {
+      "urn": "urn:cts:greekLit:tlg1311.tlg001.1st1K-grc1",
+      "content_path": "011-didache.txt",
+      "metadata": {
+        "work_title": "Didache",
+        "work_urn": "urn:cts:greekLit:tlg1311.tlg001",
+        "type": "edition"
+      }
+    },
+    {
+      "urn": "urn:cts:greekLit:tlg1216.tlg001.perseus-grc1",
+      "content_path": "012-barnabas.txt",
+      "metadata": {
+        "work_title": "Barnabas",
+        "work_urn": "urn:cts:greekLit:tlg1216.tlg001",
+        "type": "edition"
+      }
+    },
+    {
+      "urn": "urn:cts:greekLit:tlg1419.tlg001.1st1K-grc1",
+      "content_path": "013-shepherd.txt",
+      "metadata": {
+        "work_title": "Shepherd",
+        "work_urn": "urn:cts:greekLit:tlg1419.tlg001",
+        "type": "edition"
+      }
+    },
+    {
+      "urn": "urn:cts:greekLit:tlg1484.tlg001.1st1K-grc1",
+      "content_path": "014-martyrdom.txt",
+      "metadata": {
+        "work_title": "Martyrdom of Polycarp",
+        "work_urn": "urn:cts:greekLit:tlg1484.tlg001",
+        "type": "edition"
+      }
+    },
+    {
+      "urn": "urn:cts:greekLit:tlg0646.tlg004.1st1K-grc1",
+      "content_path": "015-diognetus.txt",
+      "metadata": {
+        "work_title": "Diognetus",
+        "work_urn": "urn:cts:greekLit:tlg0646.tlg004",
+        "type": "edition"
       }
     }
   ]
