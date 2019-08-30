@@ -44,3 +44,63 @@ Run the `import_versions` script:
 ```
 python manage.py shell -c 'from apostolic_fathers_atlas.library.importers import import_versions; import_versions();'
 ```
+
+## Sample Queries
+
+Retrieve a list of versions.
+```
+{
+  versions {
+    edges {
+      node {
+        id
+        urn
+        metadata
+      }
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+
+```
+
+Retrieve all verses from a chapter.
+```
+{
+  verses(version_Urn: "urn:cts:greekLit:tlg1271.tlg001.1st1K-grc1", chapter_Position: 1) {
+    edges {
+      node {
+        id
+        label
+        textContent
+      }
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+```
+
+Page through the first ten verses of a text.
+```
+{
+  verses(version_Urn: "urn:cts:greekLit:tlg1271.tlg001.1st1K-grc1", first: 10) {
+    edges {
+      node {
+        id
+        label
+        textContent
+      }
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
+```
