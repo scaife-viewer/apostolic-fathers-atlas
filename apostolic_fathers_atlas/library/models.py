@@ -53,6 +53,7 @@ class Chapter(models.Model):
     urn:cts:greekLit:tlg1271.tlg001.1st1K-grc1:1.1
     """
 
+    identifier = models.CharField(max_length=3, null=True, blank=True)
     position = models.IntegerField()
     idx = models.IntegerField(help_text="0-based index")
 

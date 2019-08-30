@@ -17,7 +17,7 @@ def _prepare_line_obj(
     section_idx,
     chapter_idx,
     line,
-    line_idx,
+    line_idx
 ):
     ref, tokens = line.strip().split(maxsplit=1)
     split = ref.split(".")
@@ -39,13 +39,17 @@ def _prepare_line_obj(
 
     chapter_obj = chapter_lookup.get(chapter_ref)
     if chapter_obj is None:
-        # TODO: Handle 'identifier' chars.
         try:
             chapter_position = int(chapter_ref)
+            chapter_identifier = None
         except ValueError:
-            raise NotImplementedError(f"Value: {chapter_ref}")
+            chapter_position = chapter_idx + 1
+            chapter_identifier = chapter_ref
         chapter_obj, _ = Chapter.objects.get_or_create(
-            version=version_obj, position=chapter_position, idx=chapter_idx
+            version=version_obj,
+            identifier=chapter_identifier,
+            position=chapter_position,
+            idx=chapter_idx,
         )
         chapter_lookup[chapter_ref] = chapter_obj
         chapter_idx += 1
@@ -57,7 +61,7 @@ def _prepare_line_obj(
         chapter=chapter_obj,
         section=None if not section_ref else section_obj,
         version=version_obj,
-    )
+    ), section_idx, chapter_idx
 
 
 def _import_version(data):
@@ -75,7 +79,7 @@ def _import_version(data):
     full_content_path = os.path.join(LIBRARY_DATA_PATH, data["content_path"])
     with open(full_content_path, "r") as f:
         for line_idx, line in enumerate(f):
-            line_obj = _prepare_line_obj(
+            line_obj, inc_section_idx, inc_chapter_idx = _prepare_line_obj(
                 version_obj,
                 section_lookup,
                 chapter_lookup,
@@ -85,6 +89,8 @@ def _import_version(data):
                 line_idx,
             )
             lines_to_create.append(line_obj)
+            section_idx = inc_section_idx
+            chapter_idx = inc_chapter_idx
     created_count = len(Verse.objects.bulk_create(lines_to_create))
     assert created_count == line_idx + 1
 
