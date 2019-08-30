@@ -124,8 +124,11 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.sessions",
     "django.contrib.sites",
+    # Override runserver static handling.
+    "whitenoise.runserver_nostatic",
     "django.contrib.staticfiles",
-    # Third-party.
+    # Third-party
+    "corsheaders",
     "graphene_django",
     # Project
     "apostolic_fathers_atlas",
@@ -163,6 +166,8 @@ LOGGING = {
 FIXTURE_DIRS = [os.path.join(PROJECT_ROOT, "fixtures")]
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 GRAPHENE = {
     "SCHEMA": "apostolic_fathers_atlas.schema.schema",
