@@ -125,7 +125,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.sites",
     "django.contrib.staticfiles",
-    # project
+    # Third-party.
+    "graphene_django",
+    # Project
     "apostolic_fathers_atlas",
     "apostolic_fathers_atlas.library",
 ]
@@ -161,3 +163,8 @@ LOGGING = {
 FIXTURE_DIRS = [os.path.join(PROJECT_ROOT, "fixtures")]
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+GRAPHENE = {
+    "SCHEMA": "apostolic_fathers_atlas.schema.schema",
+    "RELAY_CONNECTION_MAX_LIMIT": None,
+}
