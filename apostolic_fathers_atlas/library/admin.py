@@ -26,7 +26,6 @@ class VerseAdmin(admin.ModelAdmin):
     list_display = (
         "id",
         "text_content",
-        "html_content",
         "position",
         "idx",
         "chapter",

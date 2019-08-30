@@ -86,7 +86,6 @@ class Verse(models.Model):
     """
 
     text_content = models.TextField(blank=True)
-    html_content = models.TextField(blank=True)
 
     position = models.IntegerField()
     idx = models.IntegerField(help_text="0-based index")
