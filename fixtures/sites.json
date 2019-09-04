@@ -11,8 +11,8 @@
         "pk": 2,
         "model": "sites.site",
         "fields": {
-            "domain": "example.com",
-            "name": "example.com"
+            "domain": "apostolic-fathers-atlas.herokuapp.com",
+            "name": "apostolic-fathers-atlas [production]"
         }
     }
 ]
