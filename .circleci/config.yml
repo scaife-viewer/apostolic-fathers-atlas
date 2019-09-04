@@ -1,0 +1,74 @@
+version: 2
+jobs:
+  build:
+    docker:
+      # specify the version you desire here
+      # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
+      - image: circleci/python:3.7.3
+        environment:
+          PGUSER: root
+          PGHOST: 127.0.0.1
+          CIRCLE_CI_CORE_COUNT: 2
+
+      # # Specify service dependencies here if necessary
+      # # CircleCI maintains a library of pre-built images
+      # # documented at https://circleci.com/docs/2.0/circleci-images/
+      # - image: circleci/postgres:11
+      #   environment:
+      #     POSTGRES_USER: root
+      #     POSTGRES_DB: apostolic_fathers_atlas
+      #     POSTGRES_PASSWORD: ""
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - deps1-{{ .Branch }}-{{ checksum "requirements-dev.txt" }}
+          # fallback to using the latest cache if no exact match is found
+          - deps1-
+
+      - run:
+          name: Install Python deps in a venv
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install -r requirements-dev.txt
+
+      - save_cache:
+          paths:
+            - ./.venv
+          key: deps1-{{ .Branch }}-{{ checksum "requirements-dev.txt" }}
+
+      # lint code!
+      - run:
+          name: lint code
+          command: |
+            . venv/bin/activate
+            isort -rc -c apostolic_fathers_atlas
+            flake8 apostolic_fathers_atlas
+            black apostolic_fathers_atlas --check --diff
+
+      # # wait for Postgres
+      # - run:
+      #     name: Wait for db
+      #     command: dockerize -wait tcp://localhost:5432 -timeout 1m
+
+      # # run tests!
+      # - run:
+      #     command: |
+      #       . venv/bin/activate
+      #       python manage.py test
+
+      # - store_artifacts:
+      #     path: test-reports
+      #     destination: test-reports
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
