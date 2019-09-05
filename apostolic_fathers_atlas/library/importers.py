@@ -17,7 +17,7 @@ def _prepare_line_obj(
     section_idx,
     chapter_idx,
     line,
-    line_idx
+    line_idx,
 ):
     ref, tokens = line.strip().split(maxsplit=1)
     split = ref.split(".")
@@ -54,14 +54,18 @@ def _prepare_line_obj(
         chapter_lookup[chapter_ref] = chapter_obj
         chapter_idx += 1
 
-    return Verse(
-        text_content=tokens,
-        position=int(verse_ref),
-        idx=line_idx,
-        chapter=chapter_obj,
-        section=None if not section_ref else section_obj,
-        version=version_obj,
-    ), section_idx, chapter_idx
+    return (
+        Verse(
+            text_content=tokens,
+            position=int(verse_ref),
+            idx=line_idx,
+            chapter=chapter_obj,
+            section=None if not section_ref else section_obj,
+            version=version_obj,
+        ),
+        section_idx,
+        chapter_idx,
+    )
 
 
 def _import_version(data):
