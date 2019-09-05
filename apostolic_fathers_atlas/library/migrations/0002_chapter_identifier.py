@@ -5,14 +5,12 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('library', '0001_initial'),
-    ]
+    dependencies = [("library", "0001_initial")]
 
     operations = [
         migrations.AddField(
-            model_name='chapter',
-            name='identifier',
+            model_name="chapter",
+            name="identifier",
             field=models.CharField(blank=True, max_length=3, null=True),
-        ),
+        )
     ]
